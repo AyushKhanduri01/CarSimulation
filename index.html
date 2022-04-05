@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Title -->
+    <title>Car Simulation</title>
+
+    <!-- Libraries -->
+    <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/n5ro/aframe-physics-system@v4.0.1/dist/aframe-physics-system.min.js"></script>
+    <script src="https://recast-api.donmccurdy.com/aframe-inspector-plugin-recast.js"></script>
+    <script src="https://unpkg.com/aframe-physics-extras@0.1.2/dist/aframe-physics-extras.min.js"></script>
+    <script src="https://unpkg.com/aframe-environment-component@1.1.0/dist/aframe-environment-component.min.js"></script>
+
+</head>
+<body>
+
+    <!-- Scene -->
+    <a-scene id="scene" inspector-plugin-recast> 
+
+        <!-- Assets -->
+        <a-assets>
+            <a-asset-item id="navmesh" src="./assets/navmesh.gltf"></a-asset-item>
+            <a-asset-item id="strwheel" src="./assets/steering_wheel/scene.gltf"></a-asset-item>
+            <a-asset-item id="acc" src="./assets/acc.png"></a-asset-item>
+            <a-asset-item id="break" src="./assets/break.png"></a-asset-item>
+        </a-assets>
+
+        <!-- A-Frame Environment -->
+        <a-entity id="environment" environment="preset:egypt; skyType:gradient; lighting:ambient">
+        </a-entity>
+
+        <!-- Navigation mesh -->
+        <a-entity id="navigation-mesh" gltf-model="#navmesh" visible="true" nav-mesh>
+        </a-entity>
+
+    </a-scene>
+
+</body>
+</html>
